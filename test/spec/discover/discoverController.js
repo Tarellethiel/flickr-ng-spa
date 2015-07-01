@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: discoverController', function () {
 
   // load the controller's module
   beforeEach(module('flickrNgSpaApp'));
 
-  var MainCtrl,
+  var discoverController,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    discoverController = $controller('MainCtrl', {
       $scope: scope
     });
   }));
