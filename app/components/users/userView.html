@@ -1,9 +1,13 @@
-<div class="row">
-    <div class="col-md-6 text-center" ng-controller="userController">
-<div class="col-md-6 text-right well">User: {{userInfo.person.realname._content}}</div>
- <thumbnails photos="userPhotos.photos.photo" loading="loading"/>
-
-
-
+    
+  <div class="row col-md-10 text-left well" ng-controller="userController">
+    <div>User: {{userInfo.person.username._content}}</div>
+    <div>Real Name: <span ng-show="userInfo.person.realname._content!=undefined">{{userInfo.person.realname._content}}</span>
+    <span ng-show="userInfo.person.realname._content==undefined">No data</span>
+    </div>
+    <div> Number of photos: {{userInfo.person.photos.count._content}}</div>
   </div>
-</div>
+
+<div class="row col-md-10">
+ <thumbnails photos="userPhotos.photos.photo" loading="loading"/>
+  </div>
+

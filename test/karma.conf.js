@@ -33,7 +33,8 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
-      "app/scripts/**/*.js",
+      "app/**/*.js",
+      "app/components/**/*.js",
       "test/mock/**/*.js",
       "test/spec/**/*.js"
     ],
@@ -53,13 +54,11 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: [
-      "PhantomJS"
-    ],
-
+    browsers: ['Chrome'],
+    
     // Which plugins to enable
     plugins: [
-      "karma-phantomjs-launcher",
+      "karma-chrome-launcher",
       "karma-jasmine"
     ],
 
@@ -71,7 +70,8 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
+     reporters: ['progress']
 
     // Uncomment the following lines if you are using grunt's server to run the tests
     // proxies: {

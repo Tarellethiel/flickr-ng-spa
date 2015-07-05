@@ -1,15 +1,25 @@
 <div class="row">
-    <div class="col-md-6 text-center" ng-controller="detailsController">
-     Posted by: <a href="#/users/{{photoInfo.photo.owner.nsid}}">{{photoInfo.photo.owner.username}}</a> 
-     title: {{photoInfo.photo.title._content}}
-     views: {{photoInfo.photo.views}}
+    <div class="col-md-10 text-center" ng-controller="detailsController">
+        <div>Posted by:
+            <a href="#/users/{{photoInfo.photo.owner.nsid}}">{{photoInfo.photo.owner.username}}</a>
+        </div>
+        <div>title: {{photoInfo.photo.title._content}}</div>
+        <div>views: {{photoInfo.photo.views}}</div>
     </div>
 </div>
 
 <div class="row">
     <div>
-     <img class="img-rounded" ng-src="http://farm{{photoInfo.photo.farm}}.staticflickr.com/{{photoInfo.photo.server}}/{{photoInfo.photo.id}}_{{photoInfo.photo.secret}}_z.jpg">
+        <img class="img-rounded detailed-picture" ng-src="http://farm{{photoInfo.photo.farm}}.staticflickr.com/{{photoInfo.photo.server}}/{{photoInfo.photo.id}}_{{photoInfo.photo.secret}}_z.jpg">
     </div>
 </div>
+<div class="row">{{PhotoComments.length}} comments:</div>
+<div class="row">
+    <ul ng-show="PhotoComments.length>0">
+        <li class="animate-repeat comments" ng-repeat="comment in PhotoComments">{{comment.authorname}} : {{comment._content}}</li>
+    </ul>
+    <div ng-show="PhotoComments.length==null">No comments yet.</div>
+</div>
+
  
     

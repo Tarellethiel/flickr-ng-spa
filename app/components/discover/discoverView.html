@@ -1,7 +1,7 @@
 <div class="row">
     <div class="well">
-    <div ng-controller="discoverController" onload="doHotTags()">
-        <span>Top Tags:</span>
+   <div ng-controller="discoverController" onload="doHotTags()">
+        <span>Top Picture Tags:</span>
          <span ng-repeat="tag in topPhotoTags">
            <span class="tags{{tag.score}}">{{tag._content}} </span>
          </span>
@@ -11,13 +11,21 @@
         </div>
      <div class="row">   
         <form class="well form-horizontal text-center">
-            <label for="search">Tags: </label>
-            <input id="search" type="text" ng-model="search"/>
+            <label for="search">Search Pictures by Tags: </label>
+            <input id="search" type="text" ng-model="searchText"/>
             <button class="btn" ng-click="doSearch()">Search</button>
         </form>
+        <div class="row">
+        <a class="datefilter" ng-click="doSearch('today')">Today</a> /
+        <a class="datefilter" ng-click="doSearch('month')">This Month</a> /
+        <a class="datefilter" ng-click="doSearch('all')">All time</a>
+        </div>
+        </div>
         <thumbnails photos="photos.photos.photo" loading="loading"/>
+        </div>
     </div>
+    
 
-<div class="row"></div>
+
 
 

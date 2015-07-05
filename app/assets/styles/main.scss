@@ -119,3 +119,28 @@ background-color: #f8f8f8;
     margin-top: -3em;
  }
  .content { padding-bottom: 3em; }
+ 
+ .animate-repeat {
+  text-decoration: none;
+ 
+   &.comments{
+      border-bottom: 1px solid gray;
+        display: block;
+        margin: 0;
+        padding: 4px 10px 4px 0;
+   }
+}
+
+.detailed-picture{
+  padding: 20px 0 20px 0;
+}
+
+.text-container{
+  border: 1px solid #f8f8f8;
+  padding: 20px 0 20px 20px;
+}
+
+.row{
+ .datefilter{
+margin: 10px 10px 10px 25px;
+}}

@@ -18,45 +18,48 @@
         $scope.photoTags = data;
         var array=[];
         array=$scope.photoTags.hottags.tag;
-        //$scope.topPhotoTags = $scope.photoTags.hottags.tag;
-        
-function shuffle(array) {
+       
+//shuffle hottag list
+    var shuffle = function(array) {
     var counter = array.length, temp, index;
-
-    // While there are elements in the array
     while (counter > 0) {
-        // Pick a random index
         index = Math.floor(Math.random() * counter);
-
-        // Decrease counter by 1
         counter--;
-
-        // And swap the last element with it
         temp = array[counter];
         array[counter] = array[index];
         array[index] = temp;
     }
-
     return array;
-}
-shuffle(array);
+};
 
+$scope.shuffle=shuffle(array);
 $scope.topPhotoTags=array;
         
       }).error(function(error){console.error(error);
       });
    }();
-    
-    $scope.doSearch = function(){
+
+    $scope.doSearch = function(pictureDate){
+     if (pictureDate=="today"){
+       var newDate = new Date();
+       pictureDate=formatDate(newDate);
+     }
+     else if (pictureDate=="month"){
+     var newDate = new Date();
+     pictureDate=formatDate(newDate, pictureDate);
+     }
+     else {pictureDate="";}
+     
       $http({
         method: 'GET',
         url:'https://api.flickr.com/services/rest/',
         params:{
         method: 'flickr.photos.search',
         format: 'json',
-        text: $scope.search,
+        text: $scope.searchText,
         api_key: '15b6709e54ae9bc22a00b3cbf8d48eec',
-        nojsoncallback:1
+        nojsoncallback:1,
+        min_upload_date:pictureDate
         }
       }).success(function(data)
       {
@@ -64,10 +67,19 @@ $scope.topPhotoTags=array;
       }).error(function(error){console.error(error);
       });
   };
- //    $scope.setCurrentPhoto = function(photo) {
- //     Photo.setPhoto(photo);
-//    };
-  }]);
   
   
-  })();
+  function formatDate(date,filter) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+    if(filter=='month') {day='01';}
+    return [year, month, day].join('-');
+}
+
+   }]);
+   })();
