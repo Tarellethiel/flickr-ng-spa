@@ -1,10 +1,11 @@
  (function(){
    'use strict';
  angular.module('flickrNgSpaApp')
-  .controller('homeController', ['$scope', '$http','$q', function($scope, $http, $q){
+  .controller('homeController', ['sharedScope','$scope', '$http','$q', function(sharedScope, $scope, $http, $q){
+    $scope.sharedScope = sharedScope;
+
 $scope.getHttp=function(){
   var defer= $q.defer();
-
        $http({
         method: 'GET',
         url:'https://api.flickr.com/services/rest/',
@@ -19,6 +20,7 @@ $scope.getHttp=function(){
       { 
         defer.resolve(data);
         $scope.photos = data;
+        
 
       }).error(function(data, status, headers, config){ 
          defer.reject();

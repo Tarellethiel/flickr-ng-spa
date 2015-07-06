@@ -42,8 +42,8 @@
               <li ng-class="{active: isActive('/discover')}"><a ng-href="#/discover">Discover</a></li>
        <!--       <li ng-class="{active: isActive('/users')}"><a ng-href="#/users">Users&Groups</a></li>  -->
             </ul>
-            <form ng-controller="homeController" class="navsearch form-horizontal text-center">
-             <input id="search" type="text" ng-model="$scope.name"/>
+            <form class="navsearch form-horizontal text-center">
+             <input id="search" type="text" ng-model="dataService.filterValue"/>
         </form>
           </div>
         </div>
@@ -82,6 +82,7 @@
         <script src="components/photos/flickrURLFilter.js"></script>
         <script src="components/photos/photoService.js"></script>   
         <script src="components/shared/headerController.js"></script>     
+        <script src="components/shared/sharedScopeService.js"></script>     
  
         <!-- endbuild -->
 </body>

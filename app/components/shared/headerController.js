@@ -1,8 +1,9 @@
 (function () {
   'use strict';
   angular.module('flickrNgSpaApp')
-    .controller('headerController', ['$scope', '$location', function ($scope, $location) {
+    .controller('headerController', ['sharedScope', '$scope', '$location', function (sharedScope, $scope, $location) {
     {
+      $scope.sharedScope = sharedScope;
       $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
       };
