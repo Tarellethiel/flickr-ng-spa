@@ -42,9 +42,8 @@
               <li ng-class="{active: isActive('/discover')}"><a ng-href="#/discover">Discover</a></li>
        <!--       <li ng-class="{active: isActive('/users')}"><a ng-href="#/users">Users&Groups</a></li>  -->
             </ul>
-            <form ng-controller="discoverController" class="form-horizontal text-center">
-             <input id="search" type="text" ng-model="searchText"/>
-            <button class="btn" ng-click="doSearch()">Search</button>
+            <form ng-controller="homeController" class="navsearch form-horizontal text-center">
+             <input id="search" type="text" ng-model="$scope.name"/>
         </form>
           </div>
         </div>

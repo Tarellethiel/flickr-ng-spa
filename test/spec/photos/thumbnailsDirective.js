@@ -8,7 +8,6 @@ describe('Directive: thumbnailsDirective', function () {
   var element=angular.element('<thumbnails/>');
   inject(function ($rootScope, $compile) {
    var scope = $rootScope.$new();
-   scope.name=name;
    $compile(element)(scope);
    scope.$digest();
 });

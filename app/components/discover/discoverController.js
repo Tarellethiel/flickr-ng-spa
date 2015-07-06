@@ -48,7 +48,7 @@ $scope.topPhotoTags=array;
      var newDate = new Date();
      pictureDate=formatDate(newDate, pictureDate);
      }
-     else {pictureDate="";}
+     else {pictureDate='""';}
      
       $http({
         method: 'GET',
