@@ -1,9 +1,3 @@
-// 'use strict';
-// 
-// beforeEach(module('flickrNgSpaApp'));
-//    
-//     describe('homeController', function () {
-// 
 //         var $httpBackend,
 //             expectedUrl = 'https://api.flickr.com/services/rest/',
 //             promise,

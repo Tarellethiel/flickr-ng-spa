@@ -8,10 +8,10 @@
     },
       function (newValue, oldValue) {
         if (newValue !== oldValue) $scope.filter = newValue;
-      });
-
-
-    $scope.getHttp = function () {
+      }); 
+     
+ 
+    $scope.getRecent = function () {
       var defer = $q.defer();
       $http({
         method: 'GET',
@@ -30,6 +30,8 @@
       });
       return defer.promise;
     } ();
+    
+    
   }]);
 })();
   
