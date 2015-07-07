@@ -1,8 +1,15 @@
  (function(){
    'use strict';
  angular.module('flickrNgSpaApp')
-  .controller('userController', ['$scope', '$http', '$routeParams',function($scope, $http, $routeParams){
-    
+  .controller('userController', ['sharedScope', '$scope', '$http', '$routeParams',function(sharedScope, $scope, $http, $routeParams){
+      
+      $scope.$watch(function () {
+      return sharedScope.getFilter();
+    },
+      function (newValue, oldValue) {
+        if (newValue !== oldValue) $scope.filter = newValue;
+      });
+
       $http({
         method: 'GET',
         url:'https://api.flickr.com/services/rest/',

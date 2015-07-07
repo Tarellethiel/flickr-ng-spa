@@ -1,6 +1,17 @@
 'use strict';
 
 angular.module('flickrNgSpaApp')
-.service("sharedScope", function() {
-    this.FilterValue="";
-});
+.factory("sharedScope", function() {
+    var data={
+        Filter:''
+    };
+    return{
+        getFilter: function(){
+            return data.Filter;
+        },
+        setFilter:function(filter){
+            data.Filter=filter;
+        }
+    };
+    
+    });

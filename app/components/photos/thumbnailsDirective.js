@@ -9,7 +9,8 @@ angular.module('flickrNgSpaApp')
       scope: {
         photos: '=',
         loading: '=',
-        link: '&'
+        link: '&',
+        isolatedAttributeFilter: '@attributeFilter'
       }
     };
   });
