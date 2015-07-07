@@ -31,9 +31,6 @@ angular
          templateUrl: 'components/details/detailsView.html',
         controller: 'detailsController'
         })
-      .otherwise({
-        redirectTo: '/'
-      })
         .when('/users/:nsid' ,{
          templateUrl: 'components/users/userView.html',
         controller: 'userController'
