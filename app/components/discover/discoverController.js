@@ -2,6 +2,8 @@
   'use strict';
   angular.module('flickrNgSpaApp')
     .controller('discoverController', ['configService', '$q', '$scope', '$http', function (configService, $q, $scope, $http) {
+$scope.name='Superman';
+
 
     $scope.doHotTags = function () {
       var defer = $q.defer();
